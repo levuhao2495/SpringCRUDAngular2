@@ -1,0 +1,4 @@
+com\mvc\controller\test_connect.class
+com\mvc\entity\Device.class
+com\mvc\dao\DeviceDaoImpl.class
+com\mvc\dao\Devicedao.class
