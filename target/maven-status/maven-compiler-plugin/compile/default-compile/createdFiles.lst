@@ -1,4 +1,7 @@
-com\mvc\controller\test_connect.class
-com\mvc\entity\Device.class
+com\mvc\service\DeviceServiceImpl.class
+com\mvc\service\DeviceService.class
+com\mvc\dao\DeviceDao.class
 com\mvc\dao\DeviceDaoImpl.class
-com\mvc\dao\Devicedao.class
+com\mvc\controller\DeviceController.class
+com\mvc\controller\test_connect.class
+com\mvc\bean\Device.class

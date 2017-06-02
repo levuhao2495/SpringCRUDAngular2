@@ -18,7 +18,7 @@ public class test_connect {
 	private String sql;
 	public test_connect(){
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://" +
 					this.hostname+":"+this.dbport+"/"+this.databasename, this.dbuser, this.dbpassword);
 			if(conn != null)
@@ -31,12 +31,10 @@ public class test_connect {
 			st = conn.createStatement();
 			 // execute the query, and get a java resultset
 			rs = st.executeQuery(sql);
-	
 			 while (rs.next()) {
-		
 			System.out.println(rs.getInt(1) + "\t" + rs.getString(2)
 			+ "\t"+ rs.getString(3)+ "\t" +
-			 "\t" + rs.getString(4) + "\t" + rs.getString(5)+ "\t" +
+			 "\t" + rs.getString(4) + "\t" + rs.getInt(5)+ "\t" +
 			 rs.getString(6)+ "\t"+ rs.getString(7)+ "\t"+ rs.getString(8)+ "\t"+
 					 rs.getString(9));
 			 }
