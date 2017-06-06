@@ -9,22 +9,22 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+
 import com.mvc.bean.Device;
 
-@Repository("deviceDao")
+@Repository()
 /* 
  *@Repository là một annotation, nó được sử dụng để chú thích trên một
  * class để nói với Spring rằng class này là một Spring BEAN. 
  * 
  */
-
 public class DeviceDaoImpl implements DeviceDao {
 	
-	private DataSource dataSource;
+	
 	private JdbcTemplate jdbcTemplate;
+	
 	@Autowired
 	public void setDataSource(DataSource dataSource){
-		this.dataSource=dataSource;
 		this.jdbcTemplate=new JdbcTemplate(dataSource);
 	}
 	@Override
@@ -32,11 +32,8 @@ public class DeviceDaoImpl implements DeviceDao {
 		// TODO Auto-generated method stub
 		List<Device> devices = null;
 		try{
-//			devices= jdbcTemplate.query("SELECT * FROM device",
-//					new BeanPropertyRowMapper<Device>(Device.class));
-			System.out.println(jdbcTemplate.query("SELECT * FROM device",
-					new BeanPropertyRowMapper<Device>(Device.class)));
-			System.out.println("anv");
+		devices= jdbcTemplate.query("SELECT * FROM device",
+				new BeanPropertyRowMapper<Device>(Device.class));		
 		}catch(Exception e){
 			e.printStackTrace();
 		}
